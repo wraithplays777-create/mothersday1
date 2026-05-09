@@ -66,19 +66,31 @@ function startMusic() {
 
   music.volume = 0;
 
-  music.play();
+  const playPromise = music.play();
 
-  musicPlaying = true;
+  if (playPromise !== undefined) {
 
-  let fade = setInterval(() => {
+    playPromise.then(() => {
 
-    if (music.volume < 0.9) {
-      music.volume += 0.05;
-    } else {
-      clearInterval(fade);
-    }
+      musicPlaying = true;
 
-  }, 200);
+      let fade = setInterval(() => {
+
+        if (music.volume < 0.9) {
+          music.volume += 0.05;
+        } else {
+          clearInterval(fade);
+        }
+
+      }, 200);
+
+    }).catch((error) => {
+
+      console.log("Music autoplay blocked:", error);
+
+    });
+
+  }
 
 }
 
