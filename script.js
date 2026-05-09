@@ -64,31 +64,42 @@ navButtons.forEach(button => {
 
 function startMusic() {
 
-bgMusic.volume = 0;
+  music.volume = 0;
 
-const playPromise = bgMusic.play();
+  const playPromise = music.play();
 
-if (playPromise !== undefined) {
+  if (playPromise !== undefined) {
 
-  playPromise.then(() => {
+    playPromise.then(() => {
 
-    let vol = 0;
+      musicPlaying = true;
 
-    // SOFT FADE IN
-    const fadeIn = setInterval(() => {
+      let vol = 0;
 
-      if (vol < 0.28) {
-        vol += 0.01;
-        bgMusic.volume = vol;
-      } else {
-        clearInterval(fadeIn);
-      }
+      const fadeIn = setInterval(() => {
 
-    }, 180);
+        if (vol < 0.28) {
 
-  }).catch((err) => {
-    console.log(err);
-  });
+          vol += 0.01;
+
+          music.volume = vol;
+
+        } else {
+
+          clearInterval(fadeIn);
+
+        }
+
+      }, 180);
+
+    }).catch((err) => {
+
+      console.log("Music autoplay blocked");
+
+    });
+
+  }
+
 }
 
       console.log("Music autoplay blocked:", error);
