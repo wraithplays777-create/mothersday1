@@ -111,7 +111,6 @@ function startMusic() {
 }
 
 musicToggle.addEventListener("click", () => {
-
   if (musicPlaying) {
 
     music.pause();
