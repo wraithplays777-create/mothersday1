@@ -179,22 +179,3 @@ closePopup.addEventListener("click", () => {
   memoryPopup.classList.add("hidden");
 
 });
-window.addEventListener("beforeunload", () => {
-
-  let fadeAudio = setInterval(() => {
-
-    if (bgMusic.volume > 0.02) {
-
-      bgMusic.volume -= 0.02;
-
-    } else {
-
-      bgMusic.pause();
-
-      clearInterval(fadeAudio);
-
-    }
-
-  }, 100);
-
-});
