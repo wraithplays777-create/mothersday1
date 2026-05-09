@@ -64,27 +64,32 @@ navButtons.forEach(button => {
 
 function startMusic() {
 
-  music.volume = 0;
+bgMusic.volume = 0;
 
-  const playPromise = music.play();
+const playPromise = bgMusic.play();
 
-  if (playPromise !== undefined) {
+if (playPromise !== undefined) {
 
-    playPromise.then(() => {
+  playPromise.then(() => {
 
-      musicPlaying = true;
+    let vol = 0;
 
-      let fade = setInterval(() => {
+    // SOFT FADE IN
+    const fadeIn = setInterval(() => {
 
-        if (music.volume < 0.9) {
-          music.volume += 0.05;
-        } else {
-          clearInterval(fade);
-        }
+      if (vol < 0.28) {
+        vol += 0.01;
+        bgMusic.volume = vol;
+      } else {
+        clearInterval(fadeIn);
+      }
 
-      }, 200);
+    }, 180);
 
-    }).catch((error) => {
+  }).catch((err) => {
+    console.log(err);
+  });
+}
 
       console.log("Music autoplay blocked:", error);
 
@@ -172,5 +177,24 @@ balloons.forEach(balloon => {
 closePopup.addEventListener("click", () => {
 
   memoryPopup.classList.add("hidden");
+
+});
+window.addEventListener("beforeunload", () => {
+
+  let fadeAudio = setInterval(() => {
+
+    if (bgMusic.volume > 0.02) {
+
+      bgMusic.volume -= 0.02;
+
+    } else {
+
+      bgMusic.pause();
+
+      clearInterval(fadeAudio);
+
+    }
+
+  }, 100);
 
 });
