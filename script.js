@@ -9,14 +9,15 @@ const music = document.getElementById("bgMusic");
 const musicToggle = document.getElementById("musicToggle");
 
 const balloons = document.querySelectorAll(".balloon");
-const memoryPopup = document.getElementById("memoryPopup");
 
+const memoryPopup = document.getElementById("memoryPopup");
 const memoryImage = document.getElementById("memoryImage");
 const memoryCaption = document.getElementById("memoryCaption");
 
 const closePopup = document.getElementById("closePopup");
 
 let musicPlaying = false;
+
 
 /* OPEN SITE */
 
@@ -26,6 +27,7 @@ openBtn.addEventListener("click", () => {
   openingScreen.style.transition = "0.8s";
 
   setTimeout(() => {
+
     openingScreen.style.display = "none";
 
     mainSite.classList.remove("hidden");
@@ -35,6 +37,7 @@ openBtn.addEventListener("click", () => {
   }, 700);
 
 });
+
 
 /* NAVIGATION */
 
@@ -59,6 +62,7 @@ navButtons.forEach(button => {
   });
 
 });
+
 
 /* MUSIC */
 
@@ -92,7 +96,7 @@ function startMusic() {
 
       }, 180);
 
-    }).catch((err) => {
+    }).catch(() => {
 
       console.log("Music autoplay blocked");
 
@@ -102,15 +106,11 @@ function startMusic() {
 
 }
 
-      console.log("Music autoplay blocked:", error);
 
-    });
-
-  }
-
-}
+/* MUSIC TOGGLE */
 
 musicToggle.addEventListener("click", () => {
+
   if (musicPlaying) {
 
     music.pause();
@@ -130,6 +130,7 @@ musicToggle.addEventListener("click", () => {
   }
 
 });
+
 
 /* MEMORIES */
 
@@ -157,6 +158,7 @@ const memories = {
 
 };
 
+
 /* BALLOON CLICK */
 
 balloons.forEach(balloon => {
@@ -181,6 +183,7 @@ balloons.forEach(balloon => {
   });
 
 });
+
 
 /* CLOSE POPUP */
 
