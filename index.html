@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Mummy ❤️</title>
 
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- PETALS -->
+  <div class="petals"></div>
+
+  <!-- OPENING SCREEN -->
+  <section class="opening-screen" id="openingScreen">
+
+    <p class="top-text">🌸 A SURPRISE MADE WITH LOVE</p>
+
+    <div class="gift-circle">
+      🎁
+    </div>
+
+    <h1 class="main-title">Mummy</h1>
+
+    <p class="made-text">
+      Rehan made this especially for you 🌸
+    </p>
+
+    <button id="openBtn" class="open-btn">
+      OPEN YOUR SURPRISE ✨
+    </button>
+
+  </section>
+
+  <!-- MAIN WEBSITE -->
+  <main class="main-site hidden" id="mainSite">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+      <button class="nav-btn active" data-page="home">
+        🏠 <span>HOME</span>
+      </button>
+
+      <button class="nav-btn" data-page="balloons">
+        🎈 <span>BALLOONS</span>
+      </button>
+
+      <button class="nav-btn" data-page="message">
+        💌 <span>MESSAGE</span>
+      </button>
+
+    </nav>
+
+    <!-- HOME PAGE -->
+    <section class="page active-page" id="home">
+
+      <div class="banner">
+        🌸 HAPPY MOTHER'S DAY 🌸
+      </div>
+
+      <div class="main-image-wrap">
+
+        <div class="image-ring"></div>
+
+        <img src="mainimg.jpeg" class="main-image">
+
+      </div>
+
+      <p class="small-quote">
+        To the woman who made my world beautiful.
+      </p>
+
+      <h1 class="mummy-title">
+        Mummy
+      </h1>
+
+      <div class="love-badge">
+        🌸 Celebrated & Endlessly Loved 🌸
+      </div>
+
+    </section>
+
+    <!-- BALLOON PAGE -->
+    <section class="page" id="balloons">
+
+      <h2 class="balloon-title">
+        Pop the Balloons
+      </h2>
+
+      <p class="balloon-subtitle">
+        Each one holds a little surprise — tap to reveal 🌼
+      </p>
+
+      <div class="balloon-container">
+
+        <div class="balloon pink" data-memory="1"></div>
+
+        <div class="balloon purple" data-memory="2"></div>
+
+        <div class="balloon orange" data-memory="3"></div>
+
+        <div class="balloon blue" data-memory="4"></div>
+
+      </div>
+
+    </section>
+
+    <!-- MESSAGE PAGE -->
+    <section class="page" id="message">
+
+      <div class="message-header">
+
+        <p class="message-top">
+          A LETTER WRITTEN JUST FOR YOU
+        </p>
+
+        <h1>
+          With All My Love 🌸
+        </h1>
+
+        <p>
+          Written for you by Rehan
+        </p>
+
+      </div>
+
+      <div class="letter">
+
+        <p>
+          Happy Mother’s Day, Ammi ❤️
+        </p>
+
+        <p>
+          I don’t say it enough, but everything good in me exists because of you. Your love, your sacrifices, your patience, and the quiet way you always stand beside me — those things mean more to me than words can ever explain.
+        </p>
+
+        <p>
+          You carried my worries even when nobody noticed yours. You supported me even in moments when I doubted myself. No matter how much I grow, a part of me will always remain the child who finds comfort in your presence.
+        </p>
+
+        <p>
+          Thank you for every little thing you’ve done silently for me. Thank you for being my home, my strength, and the purest form of love I’ve ever known.
+        </p>
+
+        <p>
+          I genuinely feel lucky to have you as my mother. If I become even half the person you are, I’ll consider my life successful.
+        </p>
+
+        <p>
+          I love you endlessly, Ammi 🌸
+        </p>
+
+        <div class="signature">
+          — with love,<br>
+          Rehan
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MEMORY POPUP -->
+  <div class="memory-popup hidden" id="memoryPopup">
+
+    <div class="memory-card">
+
+      <div class="tape"></div>
+
+      <img id="memoryImage" src="">
+
+      <p id="memoryCaption"></p>
+
+      <small>
+        WITH LOVE FROM REHAN 🌸
+      </small>
+
+      <button id="closePopup">
+        🎈 Pop Another Balloon
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MUSIC PLAYER -->
+  <div class="music-player">
+
+    <button id="musicToggle">
+      ⏸
+    </button>
+
+    <span>♪ Playing</span>
+
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
